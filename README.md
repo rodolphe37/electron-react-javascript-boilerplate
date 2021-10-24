@@ -379,7 +379,7 @@ yarn
 ```
 yarn electron:start
 ```
->This command start the app without browser window, only electron window & devTools
+>This command start the app on port 3000 without browser window and the electron window & devTools (with hot reload thank to electronmon.)
 
 ### Build & compile the app:
 
