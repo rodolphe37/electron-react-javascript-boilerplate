@@ -199,7 +199,8 @@ package.json
 Update the ```browserslist``` section of ```package.json``` to support only the latest Electron version. This ensures Webpack/Babel will only add the polyfills and features we strictly need, keeping the bundle size to the minimum.
 
 ```
-package.json```
+package.json
+```
 ```json
 "browserslist": {
    "production": [
@@ -220,7 +221,9 @@ package.json```
 A [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is an additional layer of protection against cross-site scripting attacks and data injection attacks. So I highly recommend to enable it in ```<project-root>/public/index.html```.
 The following CSP will allow Electron to run only inline scripts (the ones injected in the HTML file by Create React App’s build process).
 
-```public/index.html```
+```
+public/index.html
+```
 ```html
  <meta name="theme-color" content="#000000" />
    <meta
@@ -239,7 +242,9 @@ The following CSP will allow Electron to run only inline scripts (the ones injec
 
 In your ```package.json```, define a script to build the Create React App and start the Electron process in watch mode:
 
-```package.json```
+```
+package.json
+```
 ```json
  "scripts": {
    "start": "react-scripts start",
@@ -268,7 +273,9 @@ Finally, we need to make a few minor changes to the Create React App setup to ge
 
 Electron-builder infers a few default info required to bundle the distributable file (app name, author, and description) from the ```package.json```, so let’s specify them:
 
-```package.json```
+```
+package.json
+```
 ```json
  "name": "my-electron-app",
  "version": "0.1.0",
@@ -284,7 +291,9 @@ Electron-builder infers a few default info required to bundle the distributable 
 
 Let’s add a minimal [Electron-builder configuration](https://www.electron.build/configuration/configuration#configuration) in the ```package.json``` using the ```build``` key on top level:
 
-```package.json```
+```
+package.json
+```
 ```json
    "build": {
      "appId": "com.electron.myapp",
