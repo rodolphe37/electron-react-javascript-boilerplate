@@ -11,7 +11,7 @@
 
 ---
 
-## How to use this boilerplate?
+# How to use this boilerplate?
 
 ![React/Electron boilerplate](demo.png)
 
@@ -58,7 +58,9 @@ yarn electron:package:win
 
 ---
 
-# Desktop application with Electron and Create React App
+# Create your own App!
+
+## Desktop application with Electron and Create React App
 
 
 >**TL;DR:** A step-by-step tutorial explaining how to create a desktop application using Create React App (CRA) and Electron.
