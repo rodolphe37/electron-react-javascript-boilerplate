@@ -33,7 +33,7 @@
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
     "electron": "^15.3.0",
-    "electron-builder": "^22.11.7",
+    "electron-builder": "^22.13.1",
     "electronmon": "^2.0.1",
     "wait-on": "^6.0.0"
   },
