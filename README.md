@@ -11,7 +11,7 @@
 
 ---
 
-# How to use this boilerplate?
+# Solution 1: How to use this boilerplate?
 
 ![React/Electron boilerplate](demo.png)
 
@@ -60,7 +60,7 @@ yarn electron:package:win
 
 
 
-# Create your own App!
+# Solution 2: Create your own App!
 
 ## Desktop application with Electron and Create React App
 
