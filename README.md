@@ -142,9 +142,6 @@ package.json
 ```
 ```json
 {
-  "name": "my-electron-app",
-  "version": "0.1.0",
-  "private": true,
   "main": "./public/electron.js",
   "dependencies": {
 
@@ -187,11 +184,7 @@ package.json
 ```
 ```json
 {
-  "name": "my-electron-app",
-  "version": "0.1.0",
-  "private": true,
   "homepage": "./",
-  "main": "./public/electron.js",
   "dependencies": {
 ```
 ### Update ```browserslist```’s targets
@@ -205,15 +198,9 @@ package.json
 "browserslist": {
    "production": [
       "last 1 electron version",
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
    ],
    "development": [
       "last 1 electron version",
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
    ]
  },
 ```
@@ -232,7 +219,7 @@ public/index.html
    />
    <meta
      http-equiv="Content-Security-Policy"
-     content="script-src 'self' 'unsafe-inline';"
+     content="script-src 'self' 'unsafe-inline' 'unsafe-eval';"
    />
 
 ```
