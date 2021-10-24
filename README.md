@@ -1,5 +1,7 @@
 # Building a desktop application using Electron and Create React App
 
+![React/Electron boilerplate](demo.png)
+
 >**TL;DR:** A step-by-step tutorial explaining how to create a desktop application using Create React App (CRA) and Electron.
 
 I recently needed to wrap a React app generated with [Create React App (CRA)](https://github.com/facebook/create-react-app) with [Electron](https://www.electronjs.org/).
