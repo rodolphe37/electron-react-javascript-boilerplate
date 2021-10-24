@@ -2,7 +2,7 @@
 
 >**TL;DR:** A step-by-step tutorial explaining how to create a desktop application using Create React App (CRA) and Electron.
 
-I recently needed to wrap a React app generated with [Create React App (CRA)](https://github.com/facebook/create-react-app) with [Electron](https://www.electronjs.org/) (well, the app itself uses React Native for Web, but it doesn’t matter).
+I recently needed to wrap a React app generated with [Create React App (CRA)](https://github.com/facebook/create-react-app) with [Electron](https://www.electronjs.org/).
 My goal was to stay within the Create React App limits as much as possible (without ejecting).
 There’s no shortage of guides on how to do it online. Still, I couldn’t find one that fully follows the Electron security guidelines and provides a distribution setup [using Electron-builder](https://www.electron.build/).
 So, here’s yet another tutorial on how to wrap an app built with Create React App in Electron — from the initial scaffolding up to the distribution workflow.
