@@ -15,7 +15,7 @@
 
 ![React/Electron boilerplate](demo.png)
 
-First, you need to fork & clone the repo or clone directly this repo and write in the console:
+First, you need to fork & clone the repo or clone directly this repo and write in the console (from the root folder app of course.):
 
 ```
 yarn
