@@ -22,6 +22,9 @@ Then, add the following dependencies (most of them are here only to simplify the
 
 ```
 cd my-electron-app
+```
+
+```
 yarn add -D concurrently cross-env electron electron-builder electronmon wait-on
 ```
 
