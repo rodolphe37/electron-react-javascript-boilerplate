@@ -363,4 +363,45 @@ You can now run ```yarn electron:start``` to kickstart your development flow, an
 Please keep in mind that the project created with this tutorial represents what I consider the bare minimum to requirements to wrap a React app with Electron. I highly recommend taking some time to read the [Electron](https://www.electronjs.org/docs/latest/) and [Electron-builder](https://www.electron.build/) official documentation to tweak your setup.
 
 
+---
+
+## How to use this boilerplate?
+
+First, you need fork or clone directly this repo and write in the console:
+
+```
+yarn
+```
+>This command install all dependencies
+
+### Start the app:
+
+```
+yarn electron:start
+```
+>This command start the app without browser window, only electron window
+
+### Build & compile the app:
+
+#### for Linux:
+
+```
+yarn electron:package:linux
+```
+>This command build the React app into the build folder & compile the content of build folder into the dist folder (.deb file)
+
+#### For Mac:
+
+```
+yarn electron:package:mac
+```
+>This command build the React app into the build folder & compile the content of build folder into the dist folder (.dmg file)
+
+#### For Windows:
+
+```
+yarn electron:package:win
+```
+>This command build the React app into the build folder & compile the content of build folder into the dist folder (.exe file)
+
 Oct 24, 2021
