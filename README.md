@@ -1,10 +1,10 @@
- <img  style =" margin-top: -12px; margin-right: 22px " src="demo/electronjs.svg" alt="drawing" height="60" width="150"/>
+ <img  style =" margin-top: -12px; margin-right: 22px " src="electronjs.svg" alt="drawing" height="60" width="150"/>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/rodolphe37/my-simple-tasks-manager-desktop-version/blob/main/LICENSE)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/rodolphe37/my-simple-tasks-manager-desktop-version/graphs/commit-activity)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/rodolphe37/electron-react-javascript-boilerplate/blob/main/LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/rodolphe37/electron-react-javascript-boilerplate/graphs/commit-activity)
 [![JavaScript](https://img.shields.io/badge/--F7DF1E?logo=javascript&logoColor=000)](https://www.javascript.com/)
-[![GitHub issues](https://badgen.net/github/issues/rodolphe37/my-simple-tasks-manager-desktop-version/)](https://github.com/rodolphe37/my-simple-tasks-manager-desktop-version/issues)
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/rodolphe37/my-simple-tasks-manager-desktop-version)
+[![GitHub issues](https://badgen.net/github/issues/rodolphe37/electron-react-javascript-boilerplate/)](https://github.com/rodolphe37/electron-react-javascript-boilerplate/issues)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/rodolphe37/electron-react-javascript-boilerplate)
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
 
 <img   src="https://badges.aleen42.com/src/react.svg" alt="drawing" height="20" width="65"/>
