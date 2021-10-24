@@ -1,6 +1,65 @@
-# Desktop application with Electron and Create React App
+ <img  style =" margin-top: -12px; margin-right: 22px " src="demo/electronjs.svg" alt="drawing" height="60" width="150"/>
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/rodolphe37/my-simple-tasks-manager-desktop-version/blob/main/LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/rodolphe37/my-simple-tasks-manager-desktop-version/graphs/commit-activity)
+[![JavaScript](https://img.shields.io/badge/--F7DF1E?logo=javascript&logoColor=000)](https://www.javascript.com/)
+[![GitHub issues](https://badgen.net/github/issues/rodolphe37/my-simple-tasks-manager-desktop-version/)](https://github.com/rodolphe37/my-simple-tasks-manager-desktop-version/issues)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/rodolphe37/my-simple-tasks-manager-desktop-version)
+[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
+
+<img   src="https://badges.aleen42.com/src/react.svg" alt="drawing" height="20" width="65"/>
+
+---
+
+## How to use this boilerplate?
 
 ![React/Electron boilerplate](demo.png)
+
+First, you need to fork & clone the repo or clone directly this repo and write in the console:
+
+```
+yarn
+```
+>This command install all dependencies (Because Electron app : yarn is strongly recommended, instead of npm )
+
+### Start the app:
+
+```
+yarn electron:start
+```
+>This command start the app on port 3000 without browser window and the electron window & devTools (with hot reload thank to electronmon.)
+
+### Build & compile the app:
+
+#### for Linux:
+
+```
+yarn electron:package:linux
+```
+>This command build the React app into the build folder & compile the content of build folder into the dist folder (.deb file)
+
+#### For Mac:
+
+```
+yarn electron:package:mac
+```
+>This command build the React app into the build folder & compile the content of build folder into the dist folder (.dmg file)
+
+#### For Windows:
+
+```
+yarn electron:package:win
+```
+>This command build the React app into the build folder & compile the content of build folder into the dist folder (.exe file)
+
+---
+
+### And that's it, then you can work in your project in React js normally!
+
+---
+
+# Desktop application with Electron and Create React App
+
 
 >**TL;DR:** A step-by-step tutorial explaining how to create a desktop application using Create React App (CRA) and Electron.
 
@@ -361,48 +420,5 @@ Please keep in mind that the project created with this tutorial represents what 
 
 
 ---
-
-## How to use this boilerplate?
-
-First, you need to fork & clone the repo or clone directly this repo and write in the console:
-
-```
-yarn
-```
->This command install all dependencies (Because Electron app : yarn is strongly recommended, instead of npm )
-
-### Start the app:
-
-```
-yarn electron:start
-```
->This command start the app on port 3000 without browser window and the electron window & devTools (with hot reload thank to electronmon.)
-
-### Build & compile the app:
-
-#### for Linux:
-
-```
-yarn electron:package:linux
-```
->This command build the React app into the build folder & compile the content of build folder into the dist folder (.deb file)
-
-#### For Mac:
-
-```
-yarn electron:package:mac
-```
->This command build the React app into the build folder & compile the content of build folder into the dist folder (.dmg file)
-
-#### For Windows:
-
-```
-yarn electron:package:win
-```
->This command build the React app into the build folder & compile the content of build folder into the dist folder (.exe file)
-
----
-
-# And that's it, then you can work in your project in React js normally!
 
 Oct 24, 2021
