@@ -404,4 +404,8 @@ yarn electron:package:win
 ```
 >This command build the React app into the build folder & compile the content of build folder into the dist folder (.exe file)
 
+---
+
+#And that's it, then you can work in your project in React js normally!
+
 Oct 24, 2021
