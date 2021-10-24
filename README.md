@@ -13,8 +13,9 @@ So, here’s yet another tutorial on how to wrap an app built with Create React 
 
 Let’s start from an “empty” React app generated with [Create React App](https://github.com/facebook/create-react-app).
 
+> Using [npx](https://www.npmjs.com/package/npx) to run create-react-app.
+
 ```
-# Using [npx](https://www.npmjs.com/package/npx) to run create-react-app.
 npx create-react-app my-electron-app
 ```
 Then, add the following dependencies (most of them are here only to simplify the development flow):
