@@ -182,7 +182,9 @@ To do so, a few tweaks are needed.
 ### Update the ```homepage``` property
 We need to enforce Create React App to infer a relative root path in the generated HTML file. This is a requirement because we’re not going to serve the HTML file; it will be loaded directly by Electron. To do so, we can set the ```homepage``` property of the ```package.json``` to ```./``` (see [Building For Relative Paths](https://create-react-app.dev/docs/deployment/#building-for-relative-paths) in the Create React App documentation for more details).
 
-```package.json```
+```
+package.json
+```
 ```json
 {
   "name": "my-electron-app",
@@ -196,7 +198,8 @@ We need to enforce Create React App to infer a relative root path in the generat
 
 Update the ```browserslist``` section of ```package.json``` to support only the latest Electron version. This ensures Webpack/Babel will only add the polyfills and features we strictly need, keeping the bundle size to the minimum.
 
-```package.json```
+```
+package.json```
 ```json
 "browserslist": {
    "production": [
