@@ -406,6 +406,6 @@ yarn electron:package:win
 
 ---
 
-#And that's it, then you can work in your project in React js normally!
+# And that's it, then you can work in your project in React js normally!
 
 Oct 24, 2021
