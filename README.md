@@ -274,11 +274,11 @@ package.json
  "version": "0.1.0",
  "private": true,
  "author": {
-    "name": "Rodolphe Augusto",
-    "email": "rodolphe.a@gmail.com",
-    "url": "https://rodolphe-augusto.fr"
+    "name": "Your name here",
+    "email": "Your email here",
+    "url": "Your url website"
   },
- "description": "My fantastic Electron app",
+ "description": "My fantastic Electron/React app",
  "homepage": "./",
  "main": "./public/electron.js",
  "dependencies": {
