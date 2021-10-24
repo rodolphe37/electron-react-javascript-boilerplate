@@ -256,7 +256,7 @@ Here’s a breakdown of what it does:
 
 You can now run ```yarn electron:start``` to run your React app within Electron instead of the browser window.
 
-## Package the the Electron app for distribution
+## Package the Electron app for distribution
 
 Finally, we need to make a few minor changes to the Create React App setup to generate platform-specific distributables so that our app can be installed. We’ll use Electron-builder, a configuration-based solution to package and build ready for distribution Electron apps for macOS, Windows, and Linux.
 
@@ -273,7 +273,11 @@ package.json
  "name": "my-electron-app",
  "version": "0.1.0",
  "private": true,
- "author": "John Doe",
+ "author": {
+    "name": "Rodolphe Augusto",
+    "email": "rodolphe.a@gmail.com",
+    "url": "https://rodolphe-augusto.fr"
+  },
  "description": "My fantastic Electron app",
  "homepage": "./",
  "main": "./public/electron.js",

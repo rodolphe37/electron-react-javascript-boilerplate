@@ -2,7 +2,11 @@
   "name": "my-electron-app",
   "version": "0.1.0",
   "private": true,
-  "author": "John Doe",
+  "author": {
+    "name": "Rodolphe Augusto",
+    "email": "rodolphe.a@gmail.com",
+    "url": "https://rodolphe-augusto.fr"
+  },
   "description": "A fantastic electron app",
   "homepage": "./",
   "main": "./public/electron.js",
