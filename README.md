@@ -11,7 +11,7 @@
 
 ---
 
-# Solution 1: How to use this boilerplate?
+# Solution 1: Use directly this boilerplate?
 
 ![React/Electron boilerplate](demo.png)
 
