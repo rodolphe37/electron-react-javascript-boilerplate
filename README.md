@@ -1,4 +1,4 @@
-# Building a desktop application using Electron and Create React App
+# Desktop application with Electron and Create React App
 
 ![React/Electron boilerplate](demo.png)
 
