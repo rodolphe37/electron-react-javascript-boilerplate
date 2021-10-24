@@ -367,19 +367,19 @@ Please keep in mind that the project created with this tutorial represents what 
 
 ## How to use this boilerplate?
 
-First, you need fork or clone directly this repo and write in the console:
+First, you need to fork & clone the repo or clone directly this repo and write in the console:
 
 ```
 yarn
 ```
->This command install all dependencies
+>This command install all dependencies (Because Electron app : yarn is strongly recommended, instead of npm )
 
 ### Start the app:
 
 ```
 yarn electron:start
 ```
->This command start the app without browser window, only electron window
+>This command start the app without browser window, only electron window & devTools
 
 ### Build & compile the app:
 
