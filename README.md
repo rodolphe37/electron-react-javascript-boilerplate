@@ -6,6 +6,7 @@
 [![GitHub issues](https://badgen.net/github/issues/rodolphe37/electron-react-javascript-boilerplate/)](https://github.com/rodolphe37/electron-react-javascript-boilerplate/issues)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/rodolphe37/electron-react-javascript-boilerplate)
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/rodolphe37/electron-react-javascript-boilerplate/main)
 
 <img   src="https://badges.aleen42.com/src/react.svg" alt="drawing" height="20" width="65"/>
 
