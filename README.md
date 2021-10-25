@@ -289,7 +289,7 @@ public/index.html
    />
    <meta
      http-equiv="Content-Security-Policy"
-     content="script-src 'self' 'unsafe-inline' 'unsafe-eval';"
+     content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
    />
 
 ```
