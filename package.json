@@ -11,13 +11,13 @@
   "homepage": "./",
   "main": "./public/electron.js",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,14 +28,6 @@
     "electron:package:mac": "yarn build && electron-builder -m -c.extraMetadata.main=build/electron.js",
     "electron:package:win": "yarn build && electron-builder -w -c.extraMetadata.main=build/electron.js",
     "electron:package:linux": "yarn build && electron-builder -l -c.extraMetadata.main=build/electron.js"
-  },
-  "devDependencies": {
-    "concurrently": "^6.2.1",
-    "cross-env": "^7.0.3",
-    "electron": "^15.3.0",
-    "electron-builder": "^22.13.1",
-    "electronmon": "^2.0.1",
-    "wait-on": "^6.0.0"
   },
   "eslintConfig": {
     "extends": [
@@ -70,5 +62,13 @@
     "linux": {
       "target": "deb"
     }
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^19.0.1",
+    "electron-builder": "^23.0.3",
+    "electronmon": "^2.0.2",
+    "wait-on": "^6.0.1"
   }
 }
