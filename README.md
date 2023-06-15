@@ -93,7 +93,11 @@ cd my-electron-app
 ```
 
 ```
-yarn add -D concurrently cross-env electron electron-builder electronmon wait-on
+yarn add esm
+```
+
+```
+yarn add -D concurrently cross-env electron electron-builder electronmon wait-on @babel/plugin-proposal-private-property-in-object
 ```
 
 - [`concurrently`](https://github.com/open-cli-tools/concurrently): Run multiple commands concurrently. We’ll use it to run both the Electron process and the React app in watch mode.
@@ -115,7 +119,7 @@ public/electron.js
 
 ```javascript
 // Module to control the application lifecycle and the native browser window.
-const { app, BrowserWindow, protocol } = require("electron");
+const { app, BrowserWindow, protocol, ipcMain } = require("electron");
 const path = require("path");
 const url = require("url");
 
@@ -125,9 +129,12 @@ function createWindow() {
     width: 800,
     height: 600,
     // Set the path of an additional "preload" script that can be used to
-    // communicate between node-land and browser-land.
+    // communicate between the node-land and the browser-land.
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
+      preload: path.join(__dirname, "/preload.js"),
+      contextIsolation: true,
+      nodeIntegration: true,
+      nodeIntegrationInWorker: true,
     },
   });
 
@@ -152,7 +159,7 @@ function createWindow() {
 // Setup a local proxy to adjust the paths of requested files when loading
 // them from the local production bundle (e.g.: local fonts, etc...).
 function setupLocalFilesNormalizerProxy() {
-  protocol.registerHttpProtocol(
+  protocol.handle(
     "file",
     (request, callback) => {
       const url = request.url.substr(8);
@@ -168,6 +175,7 @@ function setupLocalFilesNormalizerProxy() {
 // is ready to create the browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  ipcMain.handle("ping", () => "pong");
   createWindow();
   setupLocalFilesNormalizerProxy();
 
@@ -192,16 +200,20 @@ app.on("window-all-closed", function () {
 // If your app has no need to navigate or only needs to navigate to known pages,
 // it is a good idea to limit navigation outright to that known scope,
 // disallowing any other kinds of navigation.
-const allowedNavigationDestinations = "https://my-electron-app.com";
-app.on("web-contents-created", (event, contents) => {
-  contents.on("will-navigate", (event, navigationUrl) => {
-    const parsedUrl = new URL(navigationUrl);
 
-    if (!allowedNavigationDestinations.includes(parsedUrl.origin)) {
-      event.preventDefault();
-    }
+// Decomment this if you want to activate this fonctionality
+
+/*
+const allowedNavigationDestinations = "https://my-app.com";
+app.on("web-contents-created", (event, contents) => {
+  contents.on("will-navigate", (event, navigationURL) => {
+  const parsedURL = new URL(navigationURL);
+  if (!allowedNavigationDestinations.includes(parsedURL.origin)) {
+  event.preventDefault();
+    } 
   });
 });
+*/
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
@@ -218,8 +230,10 @@ package.json
 ```json
 {
   "main": "./public/electron.js",
-  "dependencies": {
-
+  "target": "esnext",
+  "module": "commonjs"
+  "dependencies": {...}
+}
 ```
 
 ## Electron’s preload script
@@ -235,17 +249,81 @@ public/preload.js
 ```javascript
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
-const { contextBridge } = require("electron");
+const { contextBridge, ipcRenderer } = require("electron");
 
 // As an example, here we use the exposeInMainWorld API to expose the browsers
 // and node versions to the main window.
 // They'll be accessible at "window.versions".
 process.once("loaded", () => {
-  contextBridge.exposeInMainWorld("versions", process.versions);
+  contextBridge.exposeInMainWorld("versions", {
+    node: () => process.versions.node,
+    chrome: () => process.versions.chrome,
+    electron: () => process.versions.electron,
+    ping: () => ipcRenderer.invoke("ping"),
+    // we can also expose variables, not just functions
+  });
 });
 ```
 
-The above code accesses the Node.js `process.versions` object and exposes it in the React app, making it accessible at `window.versions`.
+And replace App.js content by :
+
+```javascript
+import logo from "./logo.svg";
+import "./App.css";
+
+const versions = window.versions;
+
+function App() {
+  const func = async () => {
+    const response = await versions.ping();
+    console.log(response); // Displays 'pong'.
+  };
+
+  func();
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <p
+          style={{ fontSize: "1rem", maxWidth: 400 }}
+          id="info"
+        >{`This application use Chrome (v${versions.chrome()}), Node.js (v${versions.node()}), and Electron (v${versions.electron()})`}</p>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "15px",
+          }}
+        >
+          <p>Learn</p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            React
+          </a>&<a
+            className="App-link"
+            href="https://www.electronjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Electron
+          </a>
+        </div>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
 
 ## Making Create React App compatible with Electron
 
@@ -263,7 +341,8 @@ package.json
 ```json
 {
   "homepage": "./",
-  "dependencies": {
+  "dependencies": {...}
+}
 ```
 
 ### Update `browserslist`’s targets
