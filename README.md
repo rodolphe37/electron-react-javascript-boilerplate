@@ -17,7 +17,7 @@
 
 ### This version use Electron v25.1.1 & React v18.2.0 (from create-react-app)
 
-- Currently available in JavaScript, the TypeScript version will be available shortly.
+> Currently available in JavaScript, the TypeScript version will be available shortly.
 
 ---
 
