@@ -100,6 +100,7 @@ yarn add esm
 yarn add -D concurrently cross-env electron electron-builder electronmon wait-on @babel/plugin-proposal-private-property-in-object
 ```
 
+- [`esm`](https://reactjsexample.com/use-es-modules-in-electron/): For the last few years, Node.js has been working to support running ECMAScript modules (ESM). This has been a very difficult feature to support, since the foundation of the Node.js ecosystem is built on a different module system called CommonJS (CJS).
 - [`concurrently`](https://github.com/open-cli-tools/concurrently): Run multiple commands concurrently. We’ll use it to run both the Electron process and the React app in watch mode.
 - [`cross-env`](https://github.com/kentcdodds/cross-env): Run scripts that set and use environment variables across different platforms. We’ll use it to make our scripts compatible with both Unix and Windows OSes.
 - [`electron`](https://www.electronjs.org/): The core framework for creating the app.
