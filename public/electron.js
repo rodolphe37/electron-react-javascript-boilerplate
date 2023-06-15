@@ -11,7 +11,7 @@ function createWindow() {
     // Set the path of an additional "preload" script that can be used to
     // communicate between the node-land and the browser-land.
     webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
+      preload: path.join(__dirname, "/preload.js"),
     },
   });
 
@@ -36,7 +36,7 @@ function createWindow() {
 // Setup a local proxy to adjust the paths of requested files when loading
 // them from the local production bundle (e.g.: local fonts, etc...).
 function setupLocalFilesNormalizerProxy() {
-  protocol.registerHttpProtocol(
+  protocol.handle(
     "file",
     (request, callback) => {
       const url = request.url.substr(8);
