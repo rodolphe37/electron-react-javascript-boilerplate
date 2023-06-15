@@ -1,5 +1,5 @@
 // Module to control the application lifecycle and the native browser window.
-const { app, BrowserWindow, protocol } = require("electron");
+const { app, BrowserWindow, protocol, ipcMain } = require("electron");
 const path = require("path");
 const url = require("url");
 
@@ -12,6 +12,9 @@ function createWindow() {
     // communicate between the node-land and the browser-land.
     webPreferences: {
       preload: path.join(__dirname, "/preload.js"),
+      contextIsolation: true,
+      nodeIntegration: true,
+      nodeIntegrationInWorker: true,
     },
   });
 
@@ -52,6 +55,7 @@ function setupLocalFilesNormalizerProxy() {
 // is ready to create the browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  ipcMain.handle("ping", () => "pong");
   createWindow();
   setupLocalFilesNormalizerProxy();
 
@@ -76,15 +80,15 @@ app.on("window-all-closed", function () {
 // If your app has no need to navigate or only needs to navigate to known pages,
 // it is a good idea to limit navigation outright to that known scope,
 // disallowing any other kinds of navigation.
-const allowedNavigationDestinations = "https://my-app.com";
-app.on("web-contents-created", (event, contents) => {
-  contents.on("will-navigate", (event, navigationURL) => {
-    const parsedURL = new URL(navigationURL);
-    if (!allowedNavigationDestinations.includes(parsedURL.origin)) {
-      event.preventDefault();
-    }
-  });
-});
+// const allowedNavigationDestinations = "https://my-app.com";
+// app.on("web-contents-created", (event, contents) => {
+//   contents.on("will-navigate", (event, navigationURL) => {
+//     const parsedURL = new URL(navigationURL);
+//     if (!allowedNavigationDestinations.includes(parsedURL.origin)) {
+//       event.preventDefault();
+//     }
+//   });
+// });
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
