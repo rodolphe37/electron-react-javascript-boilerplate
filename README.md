@@ -15,7 +15,7 @@
 
 ![React/Electron boilerplate](demo.png)
 
-## This version use Electron v25.1.1 & React v18.2.0 (from create-react-app)
+### This version use Electron v25.1.1 & React v18.2.0 (from create-react-app)
 
 First, you need to fork & clone the repo or clone directly this repo and write in the console (from the root folder app of course.):
 
