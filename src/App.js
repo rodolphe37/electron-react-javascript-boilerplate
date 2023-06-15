@@ -27,7 +27,7 @@ function App() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: "15px",
+            gap: "6px",
           }}
         >
           <p>Learn</p>
