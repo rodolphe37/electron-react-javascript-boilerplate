@@ -80,15 +80,20 @@ app.on("window-all-closed", function () {
 // If your app has no need to navigate or only needs to navigate to known pages,
 // it is a good idea to limit navigation outright to that known scope,
 // disallowing any other kinds of navigation.
-// const allowedNavigationDestinations = "https://my-app.com";
-// app.on("web-contents-created", (event, contents) => {
-//   contents.on("will-navigate", (event, navigationURL) => {
-//     const parsedURL = new URL(navigationURL);
-//     if (!allowedNavigationDestinations.includes(parsedURL.origin)) {
-//       event.preventDefault();
-//     }
-//   });
-// });
+
+// Decomment this if you want to activate this fonctionality
+
+/*
+const allowedNavigationDestinations = "https://my-app.com";
+app.on("web-contents-created", (event, contents) => {
+  contents.on("will-navigate", (event, navigationURL) => {
+  const parsedURL = new URL(navigationURL);
+  if (!allowedNavigationDestinations.includes(parsedURL.origin)) {
+  event.preventDefault();
+    } 
+  });
+});
+*/
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.

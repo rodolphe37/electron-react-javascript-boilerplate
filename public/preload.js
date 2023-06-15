@@ -11,6 +11,6 @@ process.once("loaded", () => {
     chrome: () => process.versions.chrome,
     electron: () => process.versions.electron,
     ping: () => ipcRenderer.invoke("ping"),
-    // nous pouvons aussi exposer des variables, pas seulement des fonctions
+    // we can also expose variables, not just functions
   });
 });
