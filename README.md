@@ -116,10 +116,10 @@ yarn add -D concurrently cross-env electron electron-builder electronmon wait-on
 
 The next step is creating Electron’s main script. This script controls the main process, which runs in a full Node.js environment and is responsible for managing your app’s lifecycle, displaying native interfaces, performing privileged operations, and managing renderer processes.
 
-Electron’s main script is often named `main.js` and stored in `<project-root>/electron/main.js`, but in our case, we’ll name it `electron.js` (to disambiguate it) and store it in `<project-root>/public/electron.js` (so that Create React App will automatically copy it in the build directory).
+Electron’s main script is often named `main.js` and stored in `<project-root>/electron/main.js`, but in our case, we’ll name it `electron.cjs` (to disambiguate it) and store it in `<project-root>/public/electron.cjs` (so that Create React App will automatically copy it in the build directory).
 
 ```
-public/electron.js
+public/electron.cjs
 ```
 
 ```javascript
@@ -136,7 +136,7 @@ function createWindow() {
     // Set the path of an additional "preload" script that can be used to
     // communicate between the node-land and the browser-land.
     webPreferences: {
-      preload: path.join(__dirname, "/preload.js"),
+      preload: path.join(__dirname, "/preload.cjs"),
       contextIsolation: true,
       nodeIntegration: true,
       nodeIntegrationInWorker: true,
@@ -224,7 +224,7 @@ app.on("web-contents-created", (event, contents) => {
 // code. You can also put them in separate files and require them here.
 ```
 
-Yeah, this is not a “minimal” `electron.js` setup, but I wanted some nice defaults and made sure we’re following [Electron’s security guidelines](https://www.electronjs.org/docs/latest/tutorial/security).
+Yeah, this is not a “minimal” `electron.cjs` setup, but I wanted some nice defaults and made sure we’re following [Electron’s security guidelines](https://www.electronjs.org/docs/latest/tutorial/security).
 
 During execution, Electron will look for this script in the main field of the app’s package.json config, so let’s update it:
 
@@ -236,7 +236,8 @@ package.json
 {
   "main": "./public/electron.js",
   "target": "esnext",
-  "module": "commonjs"
+  "module": "esnext",
+  "type":"module"
   "dependencies": {...}
 }
 ```
@@ -245,10 +246,10 @@ package.json
 
 By default, the process running in your browser won’t be able to communicate with the Node.js process. Electron solves this problem by allowing the use of a preload script: a script that runs before the renderer process is loaded and has access to both renderer globals (e.g., `window` and `document`) and a Node.js environment.
 
-In our `electron.js` script, we already specified that we expect a preload script to be loaded from `<project-root>/public/preload.js`. So, let’s create it:
+In our `electron.cjs` script, we already specified that we expect a preload script to be loaded from `<project-root>/public/preload.cjs`. So, let’s create it:
 
 ```
-public/preload.js
+public/preload.cjs
 ```
 
 ```javascript
