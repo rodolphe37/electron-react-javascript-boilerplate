@@ -442,7 +442,7 @@ package.json
   },
  "description": "My fantastic Electron/React app",
  "homepage": "./",
- "main": "./public/electron.js",
+ "main": "./public/electron.cjs",
  "dependencies": {
 ```
 
@@ -500,9 +500,9 @@ Finally, to make Electron-builder package our app we can add a packaging script 
    "test": "react-scripts test",
    "eject": "react-scripts eject",
    "electron:start": "concurrently -k \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electronmon .\"",
-   "electron:package:mac": "yarn build && electron-builder -m -c.extraMetadata.main=build/electron.js",
-   "electron:package:win": "yarn build && electron-builder -w -c.extraMetadata.main=build/electron.js",
-   "electron:package:linux": "yarn build && electron-builder -l -c.extraMetadata.main=build/electron.js"
+   "electron:package:mac": "yarn build && electron-builder -m -c.extraMetadata.main=build/electron.cjs",
+   "electron:package:win": "yarn build && electron-builder -w -c.extraMetadata.main=build/electron.cjs",
+   "electron:package:linux": "yarn build && electron-builder -l -c.extraMetadata.main=build/electron.cjs"
  },
 ```
 
