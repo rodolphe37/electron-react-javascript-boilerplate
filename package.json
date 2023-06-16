@@ -9,7 +9,7 @@
   },
   "description": "A fantastic electron app",
   "homepage": "./",
-  "main": "./public/electron.js",
+  "main": "./public/electron.cjs",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -74,5 +74,6 @@
     "wait-on": "^7.0.1"
   },
   "target": "esnext",
-  "module": "commonjs"
+  "module": "esnext",
+  "type": "module"
 }

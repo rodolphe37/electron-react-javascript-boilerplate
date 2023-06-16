@@ -1,15 +1,24 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useEffect, useState } from "react";
 
 const versions = window.versions;
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
   const func = async () => {
     const response = await versions.ping();
-    console.log(response); // Displays 'pong'.
+    console.log("ping", response); // Displays 'pong'.
   };
 
-  func();
+  useEffect(() => {
+    setIsLoading(true);
+    if (isLoading) {
+      func();
+    }
+
+    return () => setIsLoading(false);
+  }, [isLoading]);
 
   return (
     <div className="App">

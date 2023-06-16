@@ -11,7 +11,7 @@ function createWindow() {
     // Set the path of an additional "preload" script that can be used to
     // communicate between the node-land and the browser-land.
     webPreferences: {
-      preload: path.join(__dirname, "/preload.js"),
+      preload: path.join(__dirname, "/preload.cjs"),
       contextIsolation: true,
       nodeIntegration: true,
       nodeIntegrationInWorker: true,
