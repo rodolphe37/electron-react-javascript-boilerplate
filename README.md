@@ -234,7 +234,7 @@ package.json
 
 ```json
 {
-  "main": "./public/electron.js",
+  "main": "./public/electron.cjs",
   "target": "esnext",
   "module": "esnext",
   "type":"module"
