@@ -17,7 +17,7 @@
 
 ### This version use Electron v25.1.1 & React v18.2.0 (from create-react-app)
 
-This branch is electron with ESM module
+> This branch is electron with ESM module
 
 > Currently available in JavaScript, the TypeScript version will be available shortly.
 
