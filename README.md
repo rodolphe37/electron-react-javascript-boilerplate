@@ -21,6 +21,8 @@
 
 > Currently available in JavaScript, the TypeScript version will be available shortly.
 
+> This is JavaScript version, if you want TypeScript version [click here](https://github.com/rodolphe37/electron-react-typescript-boilerplate).
+
 ---
 
 First, you need to fork & clone the repo or clone directly this repo and write in the console (from the root folder app of course.):
