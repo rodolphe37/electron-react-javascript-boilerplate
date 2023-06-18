@@ -19,8 +19,6 @@
 
 > This branch is electron with ESM module (if you want commonjs instead go to commonjs branch)
 
-> Currently available in JavaScript, the TypeScript version will be available shortly.
-
 > This is JavaScript version, if you want TypeScript version [click here](https://github.com/rodolphe37/electron-react-typescript-boilerplate).
 
 ---
